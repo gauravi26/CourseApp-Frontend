@@ -16,11 +16,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Build and tag the Docker image
-      run: |
-        IMAGE_NAME="gauravi26/frontend"
-        TIMESTAMP=$(date +%s)
-        docker build . --file Dockerfile --tag $IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest $IMAGE_NAME:reactapp-$TIMESTAMP
-    - name: Push the Docker image to Docker Hub
-      run: docker push $IMAGE_NAME:reactapp-$TIMESTAMP
+    - name: Build the Docker image # push The image to the docker hub
+      run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:reactapp-tagname
+    - name: Docker Push
+      run: docker push $DOCKER_USER/$REPO_NAME:reactapp-tagname
