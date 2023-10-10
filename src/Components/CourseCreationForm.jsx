@@ -27,10 +27,10 @@ const CourseCreationForm = () => {
         setCourseDescription('');
 
         // Show a success toast message
-        toast.success('Course created successfully!', {
-          position: 'top-right',
-          autoClose: 3000, // Close the toast after 3 seconds
-        });
+        // toast.success('Course created successfully!', {
+        //   position: 'top-right',
+        //   autoClose: 3000, // Close the toast after 3 seconds
+        // });
       })
       .catch(error => {
         console.error('Error creating course:', error);
