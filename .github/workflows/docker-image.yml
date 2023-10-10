@@ -8,6 +8,8 @@ on:
 env:
   DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
   REPO_NAME: ${{secrets.REPO_NAME}}
+  TAG_NAME: ${{secrets.TAG_NAME}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,6 +21,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image # push The image to the docker hub
-      run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:reactapp-tagname
+      run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:$TAG_NAME
     - name: Docker Push
-      run: docker push $DOCKER_USER/$REPO_NAME:reactapp-tagname
+      run: docker push $DOCKER_USER/$REPO_NAME:$TAG_NAME
