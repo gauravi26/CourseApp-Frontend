@@ -17,10 +17,9 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and tag the Docker image
-      run: |
-        IMAGE_NAME="reactapp"
-        REPO_NAME="gauravi26/frontend"
+    - run: |
+        IMAGE_NAME="gauravi26/frontend"
         docker build . --file Dockerfile --tag $IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest $REPO_NAME:reactapp-tagname
+        docker tag $IMAGE_NAME:latest $IMAGE_NAME:reactapp-tagname
     - name: Push the Docker image to Docker Hub
-      run: docker push $REPO_NAME:reactapp-tagname
+      run: docker push $IMAGE_NAME:reactapp-tagname
