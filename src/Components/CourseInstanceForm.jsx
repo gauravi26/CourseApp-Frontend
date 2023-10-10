@@ -27,10 +27,10 @@ const CourseInstanceForm = () => {
       setCourseSem('');
 
       // Show a success toast message
-      // toast.success('Instance created successfully!', {
-      //   position: 'top-right',
-      //   autoClose: 3000,
-      // });
+      toast.success('Instance created successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+      });
     } catch (error) {
       console.error('Error creating instance:', error);
 
