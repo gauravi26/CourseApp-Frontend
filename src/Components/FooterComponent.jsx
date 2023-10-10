@@ -18,7 +18,7 @@ class FooterComponent extends Component {
                         className="footer-link"
                         style={{ cursor: 'pointer', textDecoration: 'underline' }}
                     >
-                        All Rights Reserved 2023
+                        All Rights Reserved 2023@gauravi damahe
                     </span>
                 </footer>
             </div>
