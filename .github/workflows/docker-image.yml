@@ -23,4 +23,6 @@ jobs:
         docker build . --file Dockerfile --tag $IMAGE_NAME:latest
         docker tag $IMAGE_NAME:latest $IMAGE_NAME:reactapp-$TIMESTAMP
     - name: Push the Docker image to Docker Hub
-      run: docker push $IMAGE_NAME:reactapp-$TIMESTAMP
+      uses: docker/push-action@v4
+      with:
+       run: docker push $IMAGE_NAME:reactapp-$TIMESTAMP
