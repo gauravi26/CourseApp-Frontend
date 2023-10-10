@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
   REPO_NAME: ${{secrets.REPO_NAME}}
 jobs:
   build:
